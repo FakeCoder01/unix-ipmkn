@@ -1,2 +1,6 @@
 *.bin
 deduplicator
+.env
+certs/
+__pycache__/
+*.pyc
