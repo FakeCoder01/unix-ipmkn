@@ -41,8 +41,6 @@ asynchronously through Kafka, and stores results in PostgreSQL, Redis, and S3.
 ### 1. Clone & configure
 
 ```bash
-git clone <your-repo>
-cd textpipeline
 cp .env.example .env
 # edit env with keys
 ```
@@ -95,7 +93,7 @@ docker compose up -d --build
 docker compose up -d --scale worker=5 --scale api=3
 ```
 
-Kafka automatically rebalances partitions among the active workers — no
+Kafka automatically rebalances partitions among the active workers - no
 restart required. Each worker in the same consumer group (`KAFKA_GROUP_ID`)
 receives a disjoint subset of Kafka partitions, guaranteeing each message
 is processed **exactly once**.
